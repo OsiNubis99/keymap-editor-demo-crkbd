@@ -55,14 +55,12 @@
     greeting: greeting {
       compatible = "zmk,behavior-macro";
       #binding-cells = <0>;
-      label = "greeting";
       bindings = <&kp H &kp E &kp L &kp L &kp O>;
     };
 
     rgblayer: rgb_layer {
       compatible = "zmk,behavior-macro-two-param";
       #binding-cells = <2>;
-      label = "MOMENTARY_LAYER_WITH_RGB_COLOR";
       bindings
         = <&macro_param_2to2 &rgb_ug RGB_COLOR_HSB_CMD MACRO_PLACEHOLDER &macro_param_1to1>
         , <&macro_press>
@@ -78,7 +76,6 @@
     shift: with_lshift {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      label = "KEY_PRESS_WITH_LEFT_SHIFT_MODIFIER";
       bindings
         = <&macro_press>
         , <&kp LSHFT>
@@ -92,7 +89,6 @@
     as: autoshift {
       compatible = "zmk,behavior-macro-one-param";
       #binding-cells = <1>;
-      label = "AUTOSHIFT_KEYPRESS";
       bindings
         = <&macro_press>
         , <&macro_param_1to1 &macro_param_1to2 &as_ht MACRO_PLACEHOLDER MACRO_PLACEHOLDER>
@@ -107,7 +103,6 @@
     as_ht: autoshift_hold_tap {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      label = "AUTOSHIFT_HOLD_TAP";
       bindings = <&shift>, <&kp>;
 
       tapping-term-ms = <190>;
@@ -116,7 +111,6 @@
     hml: homewrow_mods_left {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      label = "HOMEROW_MODS_LEFT_HAND";
       bindings = <&kp>, <&kp>;
 
       tapping-term-ms = <200>;
@@ -126,7 +120,6 @@
     hmr: homewrow_mods_right {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
-      label = "HOMEROW_MODS_RIGHT_HAND";
       bindings = <&kp>, <&kp>;
 
       tapping-term-ms = <200>;
@@ -135,21 +128,18 @@
 
     capdance: capdance {
       compatible = "zmk,behavior-tap-dance";
-      label = "CAPDANCE";
       #binding-cells = <0>;
       bindings = <&caps_word>, <&kp CAPS>;
     };
 
     volknob: volume_encoder {
       compatible = "zmk,behavior-sensor-rotate";
-      label = "ENCODER_VOLUME_KNOB";
       #sensor-binding-cells = <0>;
       bindings = <&kp C_VOL_UP>, <&kp C_VOL_DN>;
     };
 
     rgbknob: rgb_encoder {
       compatible = "zmk,behavior-sensor-rotate-var";
-      label = "ENCODER_RGB";
       #sensor-binding-cells = <2>;
       bindings = <&rgb_ug>, <&rgb_ug>;
     };
