@@ -7,6 +7,7 @@
   macros {
     rgblayer: rgb_layer {
       compatible = "zmk,behavior-macro-two-param";
+      label = "No Macro";
       #binding-cells = <2>;
       bindings
         = <&macro_param_2to2 &rgb_ug RGB_COLOR_HSB_CMD MACRO_PLACEHOLDER &macro_param_1to1>
